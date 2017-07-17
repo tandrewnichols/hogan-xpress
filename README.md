@@ -1,10 +1,10 @@
-## HOGAN-EXPRESS
+[![Build Status](https://travis-ci.org/tandrewnichols/hogan-xpress.png)](https://travis-ci.org/tandrewnichols/hogan-xpress) [![downloads](http://img.shields.io/npm/dm/hogan-xpress.svg)](https://npmjs.org/package/hogan-xpress) [![npm](http://img.shields.io/npm/v/hogan-xpress.svg)](https://npmjs.org/package/hogan-xpress) [![Code Climate](https://codeclimate.com/github/tandrewnichols/hogan-xpress/badges/gpa.svg)](https://codeclimate.com/github/tandrewnichols/hogan-xpress) [![Test Coverage](https://codeclimate.com/github/tandrewnichols/hogan-xpress/badges/coverage.svg)](https://codeclimate.com/github/tandrewnichols/hogan-xpress) [![dependencies](https://david-dm.org/tandrewnichols/hogan-xpress.png)](https://david-dm.org/tandrewnichols/hogan-xpress) [![Greenkeeper badge](https://badges.greenkeeper.io/tandrewnichols/hogan-xpress.svg)](https://greenkeeper.io/)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/tandrewnichols/hogan-xpress.svg)](https://greenkeeper.io/)
+# hogan-xpress
 
-[Mustache][1] template engine for the [express 3.x][2] web framework.
+Mustache template engine for express 3 and 4. Supports partials, layouts, and lambdas.
 
-Uses twitter's [hogan.js][3] engine.
+Uses twitter's hogan.js engine.
 
 Supports
   - Partials (Allows you to modularize, to move pieces of templates to their own file - think of these as "included" templates)
@@ -12,34 +12,33 @@ Supports
   - Caching (Makes your app more efficient by reducing unnecessary rendering)
   - Lambdas (Allows you to create custom filters/lambdas)
 
-### Install
+## Installation
 
-Install hogan-express using [npm][4]:
+`npm install --save hogan-xpress`
 
-`npm install hogan-express`
-
-### Usage
+## Usage
 
 #### Setup
-To use hogan-express, map the file extension of your choice to the
-hogan-express engine in your app setup.  For example:
+To use `hogan-xpress`, map the file extension of your choice to the
+`hogan-xpress` engine in your app setup.  For example:
 
-```coffeescript
-app.set 'view engine', 'html'    # use .html extension for templates
-app.set 'layout', 'layout'       # use layout.html as the default layout
-app.set 'partials', foo: 'foo'   # define partials available to all pages
-app.enable 'view cache'
-app.engine 'html', require('hogan-express')
+```js
+app.set('view engine', 'html')      // use .html extension for templates
+app.set('layout', 'layout')         // use layout.html as the default layout
+app.set('partials', {foo: 'foo'})   // define partials available to all pages
+app.enable('view cache')
+app.engine('html', require('hogan-xpress'))
 ```
 
 #### Rendering a template
 
 Within your app route callback, define `res.locals` and call `res.render`, passing any partials required by your template.  For example:
 
-```coffeescript
-app.get '/', (req,res)->
-  res.locals = name: 'Andrew'
-  res.render 'template', partials: {message: 'message'}
+```js
+app.get('/', function(req, res) {
+  res.locals = { name: 'Andrew' }
+  res.render('template', { partials: {message: 'message'} })
+})
 ```
 
 This would render the layout (`layout.html`, defined in setup) using the template (`template.html`) and the specified partials (`message.html`).
@@ -117,27 +116,29 @@ To render a page with custom layout, just specify it in the options: `res.render
 
 To create custom filters (or lambdas) you can just specify your filter functions in the options:
 
-```coffeescript
-app.get '/', (req,res)->
+```js
+app.get('/', function(req, res) {
 
-  res.locals = myDefaultLabel: "oops" # here to show a little of how scoping works
+  res.locals = { myDefaultLabel: "oops" } // here to show a little of how scoping works
 
-  res.render 'template',
-    message: 'This is a message. HERE.'
-    mylist: [{label: "one", num: 1},{label: "two", num: 2},{num: 3}]
-
-    lambdas:
-     lowercase: (text) ->
+  res.render('template', {
+    message: 'This is a message. HERE.',
+    mylist: [{label: "one", num: 1},{label: "two", num: 2},{num: 3}],
+    lambdas: {
+     lowercase: function(text) {
        return text.toLowerCase()
-     reverseString: (text) ->
+     },
+     reverseString: function(text) {
        return text.split("").reverse().join("")
+     }
+    }
+  })
+});
+```
 
 Your function will recieve the fully interpolated string (not the pre-rendered template snippet).
 
 It will also receive a second parameter which is the context in which the lambda was called (this works within loops too) including top-level stuff that would be in res.locals for example. You shouldn't normally need this, but there are a few use cases for having access to that data.
-
-
-```
 
 template:
 
@@ -161,17 +162,9 @@ rendered html:
 </ul>
 ```
 
-### Contributors
-
-[Contributors list](https://github.com/vol4ok/hogan-express/graphs/contributors)
-
-Thank you for your participation!
-
 ### License
-hogan-express is released under an [MIT License][5].
+`hogan-xpress` is released under the MIT License
 
-[1]: http://mustache.github.io/mustache.5.html
-[2]: http://expressjs.com/
-[3]: https://github.com/twitter/hogan.js
-[4]: https://npmjs.org/
-[5]: http://opensource.org/licenses/MIT
+## Contributing
+
+Please see [the contribution guidelines](CONTRIBUTING.md).
