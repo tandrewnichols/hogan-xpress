@@ -24,6 +24,7 @@
     "hogan.js": ">=2.0.0"
   },
   "devDependencies": {
+    "body-parser": "^1.17.2",
     "cheerio": "~0.22.0",
     "eslint-codeframe-formatter": "^1.0.2",
     "expect.js": "~0.3.1",

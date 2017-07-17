@@ -1,4 +1,5 @@
-express = require('express');
+var express = require('express');
+var bodyParser = require('body-parser');
 
 app = module.exports = express();
 
@@ -11,8 +12,7 @@ app.set('partials', { head: "head" });
 app.engine('html', require('../lib/hogan-xpress'));
 app.set('views', __dirname + '/views');
 
-app.use(express.bodyParser());
-app.use(app.router);
+app.use(bodyParser.json());
 
 app.get('/', function(req,res) {
   res.locals = { what: 'World' };
