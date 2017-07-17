@@ -2,7 +2,7 @@
   "name": "hogan-xpress",
   "version": "1.0.0",
   "description": "Mustache template engine for express 3 and 4. Supports partials, layouts, and lambdas",
-  "main": "hogan-xpress.js",
+  "main": "lib/hogan-xpress.js",
   "scripts": {
     "travis": "grunt"
   },

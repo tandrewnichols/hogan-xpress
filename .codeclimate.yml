@@ -13,8 +13,7 @@ ratings:
    paths:
     - "lib/**.js"
 exclude_paths:
-  - "dist/**.js"
-  - "gulp/**.js"
+  - "example/**.js"
   - "test/**.js"
   - "**.json"
   - "**.md"

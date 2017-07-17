@@ -8,7 +8,7 @@ app.set('partials', { head: "head" });
 
 // app.enable('view cache')
 
-app.engine('html', require('../hogan-xpress'));
+app.engine('html', require('../lib/hogan-xpress'));
 app.set('views', __dirname + '/views');
 
 app.use(express.bodyParser());
