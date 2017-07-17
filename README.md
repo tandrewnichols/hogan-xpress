@@ -129,6 +129,12 @@ app.get '/', (req,res)->
        return text.toLowerCase()
      reverseString: (text) ->
        return text.split("").reverse().join("")
+
+Your function will recieve the fully interpolated string (not the pre-rendered template snippet).
+
+It will also receive a second parameter which is the context in which the lambda was called (this works within loops too) including top-level stuff that would be in res.locals for example. You shouldn't normally need this, but there are a few use cases for having access to that data.
+
+
 ```
 
 template:
