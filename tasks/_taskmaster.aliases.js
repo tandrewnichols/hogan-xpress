@@ -1,5 +1,5 @@
 module.exports = {
   mocha: ['mochaTest:test'],
-  build: ['mocha'],
-  'default': ['build']
+  test: ['eslint', 'mocha'],
+  'default': ['test']
 };

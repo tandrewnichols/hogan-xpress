@@ -1,8 +1,8 @@
 {
-  "name": "hogan-express",
-  "version": "0.5.3",
-  "description": "Mustache template engine for express 3.x. Support partials and layout",
-  "main": "hogan-express.js",
+  "name": "hogan-xpress",
+  "version": "1.0.0",
+  "description": "Mustache template engine for express 3 and 4. Supports partials, layouts, and lambdas",
+  "main": "hogan-xpress.js",
   "scripts": {
     "travis": "grunt"
   },
@@ -18,17 +18,19 @@
     "template",
     "engine"
   ],
-  "author": "Andrew Volkov <hello@vol4ok.net>",
+  "author": "Andrew Nichols <tandrewnichols@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "hogan.js": ">=2.0.0"
   },
   "devDependencies": {
     "cheerio": "~0.12.2",
-    "colors": "0.6.x",
+    "eslint-codeframe-formatter": "^1.0.2",
     "expect.js": "~0.2.0",
     "express": "~3.4.0",
     "grunt": "^0.4.5",
+    "grunt-cli": "^1.2.0",
+    "grunt-eslint": "^20.0.0",
     "grunt-mocha-test": "^0.12.7",
     "mocha": "^2.2.5",
     "supertest": "~0.8.0",

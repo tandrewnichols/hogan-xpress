@@ -2,11 +2,11 @@ var fs = require('fs');
 var p = require('path');
 var hogan = require('hogan.js');
 
-var cache = {}
-var ctx = {}
+var cache = {};
+var ctx = {};
 
 var isObj = function(obj) {
-  return obj && obj.toString && obj.toString() == '[object Object]';
+  return obj && obj.toString && obj.toString() === '[object Object]';
 };
 
 var extend = function(dest, ...srcs) {
@@ -65,7 +65,7 @@ var renderPartials = function(partials, opt, fn) {
 
       result[name] = str;
       if (!--count) {
-        return fn(null, result)
+        return fn(null, result);
       }
     };
   };
@@ -122,7 +122,7 @@ var customContent = function(str, tag, opt, partials) {
 };
 
 var render = function(path, opt, fn) {
-  ctx = this
+  ctx = this;
   var partials = opt.settings.partials || {};
 
   if (opt.partials) {
