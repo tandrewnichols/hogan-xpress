@@ -1,5 +1,6 @@
 module.exports = {
   mocha: ['mochaTest:test'],
-  test: ['eslint', 'mocha'],
-  'default': ['test']
+  default: ['eslint:lib', 'mocha'],
+  coverage: ['istanbul:unit', 'open:coverage'],
+  ci: ['default', 'travisMatrix']
 };

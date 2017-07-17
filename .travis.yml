@@ -1,5 +1,7 @@
 language: node_js
 sudo: false
+before_install:
+  - "export CODECLIMATE_REPO_TOKEN=b672c5a437a920b051b28ea185ca16d10f099733533b9b51945d5e2cdcade109"
 install:
   - "npm install"
 script:
