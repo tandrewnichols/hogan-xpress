@@ -1,6 +1,6 @@
 var request = require('supertest');
 var cheerio = require('cheerio');
-var app = require('./app');
+var app = require('./fixtures/app');
 var expect = require('expect.js');
 
 describe('example-page', function() {
@@ -10,8 +10,7 @@ describe('example-page', function() {
     request(app).get('/').end(function(err,res) {
       if(err) {
         console.error(err);
-      }
-      else {
+      } else {
         cheer = cheerio.load(res.text);
       }
       done();
@@ -31,7 +30,7 @@ describe('example-page', function() {
   it('should be able to handle lambdas within arrays (reverse)', function() {
     expect(cheer('[rel="test-reverse-lambda-with-context"] tr:first-child th').text().trim()).to.be('tsrif')
   });
-  it('should be able to handle lambdas within arrays (reverse) - including 'locals' data', function() {
+  it('should be able to handle lambdas within arrays (reverse) - including "locals" data', function() {
     expect(cheer('[rel="test-reverse-lambda-with-context"] tr:nth-child(1) td').text().trim()).to.be('atad motsuc')
     expect(cheer('[rel="test-reverse-lambda-with-context"] tr:nth-child(2) td').text().trim()).to.be('atad tluafed')
   });
