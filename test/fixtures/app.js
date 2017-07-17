@@ -14,7 +14,7 @@ app.set('views', __dirname + '/views');
 
 app.use(bodyParser.json());
 
-app.get('/', function(req,res) {
+app.get('/', function(req, res) {
   res.locals = { what: 'World' };
 
   res.locals.data = "default data"
@@ -35,6 +35,10 @@ app.get('/', function(req,res) {
       }
     }
   });
+});
+
+app.get('/nolayout', function(req, res) {
+  res.render('nolayout', { layout: false });
 });
 
 app.listen(4020);
