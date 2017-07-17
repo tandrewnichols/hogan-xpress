@@ -1,5 +1,7 @@
 ## HOGAN-EXPRESS
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tandrewnichols/hogan-xpress.svg)](https://greenkeeper.io/)
+
 [Mustache][1] template engine for the [express 3.x][2] web framework.
 
 Uses twitter's [hogan.js][3] engine.
