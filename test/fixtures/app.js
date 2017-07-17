@@ -1,4 +1,5 @@
-express = require('express');
+var express = require('express');
+var bodyParser = require('body-parser');
 
 app = module.exports = express();
 
@@ -8,13 +9,12 @@ app.set('partials', { head: "head" });
 
 // app.enable('view cache')
 
-app.engine('html', require('../lib/hogan-xpress'));
+app.engine('html', require('../../lib/hogan-xpress'));
 app.set('views', __dirname + '/views');
 
-app.use(express.bodyParser());
-app.use(app.router);
+app.use(bodyParser.json());
 
-app.get('/', function(req,res) {
+app.get('/', function(req, res) {
   res.locals = { what: 'World' };
 
   res.locals.data = "default data"
@@ -35,6 +35,10 @@ app.get('/', function(req,res) {
       }
     }
   });
+});
+
+app.get('/nolayout', function(req, res) {
+  res.render('nolayout', { layout: false });
 });
 
 app.listen(4020);
