@@ -12,6 +12,14 @@ Supports
   - Caching (Makes your app more efficient by reducing unnecessary rendering)
   - Lambdas (Allows you to create custom filters/lambdas)
 
+## Migration Note
+
+If you are coming from `hogan-express` (no longer maintained):
+
+I've migrated away from coffeescript (I'm sure no one will miss that). I've also cleaned up _a few_ minor, known bugs, but _not_ all the open bugs/pull requests from the original project, so please feel free to reopen issues and/or resubmit pull requests. Also, I don't have a bounty of free time, so if you're interested in helping maintain this, please email me. I'd much rather have several contributors/maintainers than a single point of failure (as we had on the previous project).
+
+The major focus of this project still has to be performance, so while adding features is nice, it can't be at the cost of speed. The migration to this module included building a _proper_ extend function (rather than using the coffeescript keyword, which is intended for class inheritance), but that does make this library _slightly_ slower (about 4/100s of a second rendering a fairly complicated page with both partials and lambdas . . . YMMV). I view that as reasonable trade off.
+
 ## Installation
 
 `npm install --save hogan-xpress`

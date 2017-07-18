@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:vol4ok/hogan-express.git"
+    "url": "git@github.com:tandrewnichols/hogan-xpress.git"
   },
   "keywords": [
     "mustache",
