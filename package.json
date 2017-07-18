@@ -20,8 +20,16 @@
     "template",
     "engine"
   ],
-  "author": "Andrew Nichols <tandrewnichols@gmail.com>",
+  "author": {
+    "name": "Andrew Nichols",
+    "email": "tandrewnichols@gmail.com",
+    "url": "www.tandrewnichols.me"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tandrewnichols/hogan-xpress/issues"
+  },
+  "homepage": "https://github.com/tandrewnichols/hogan-xpress",
   "dependencies": {
     "hogan.js": ">=2.0.0"
   },
@@ -45,5 +53,8 @@
     "mocha": "^2.2.5",
     "supertest": "~3.0.0",
     "task-master": "^2.2.1"
+  },
+  "engines": {
+    "node": ">=4"
   }
 }
