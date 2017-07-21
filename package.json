@@ -40,6 +40,7 @@
     "eslint-codeframe-formatter": "^1.0.2",
     "expect.js": "~0.3.1",
     "express": "~4.15.3",
+    "fs-extra": "^4.0.0",
     "grunt": "^0.4.5",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.1.0",
