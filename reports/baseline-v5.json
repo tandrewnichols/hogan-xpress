@@ -1,0 +1,15 @@
+{
+  "suites": {
+    "Render a page": {
+      "tests": {
+        "a basic page with no layout, partials, custom yields, or lambdas": 6693.677630195615,
+        "a page with a layout, but no partials, custom yields, or lambdas": 3411.8208693308006,
+        "a page with a layout and partials, but custom yields, or lambdas": 2250.791156924746,
+        "a page with a layout and partials and custom yields": 2150.7851759509176,
+        "a page with a layout, partials, and lambdas": 820.5355547676344,
+        "a page with a layout, partials, custom yields, and lambdas": 888.0259028232439
+      }
+    }
+  },
+  "timestamp": 1500603753617
+}

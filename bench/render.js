@@ -1,11 +1,11 @@
-let path = require('path')
-let fs = require('fs-extra')
-let arbitraryDeepContent = require('./fixtures/arbitrary-content')
-let lambdas = require('./fixtures/lambdas')
-let ctx = { lookup: p => p }
-let cache = {}
+var path = require('path')
+var fs = require('fs-extra')
+var arbitraryDeepContent = require('./fixtures/arbitrary-content')
+var lambdas = require('./fixtures/lambdas')
+var ctx = { lookup: p => p }
+var cache = {}
 
-let finish = (name, done) => (err, html) => {
+var finish = (name, done) => (err, html) => {
   // One time only, output the html to a file, just in case it needs to be reviewed
   if (!cache[name] && !err && html) {
     cache[name] = html
@@ -19,11 +19,11 @@ let finish = (name, done) => (err, html) => {
     done(err)
   }
 }
-let render = require('../lib/hogan-xpress').bind(ctx)
+var render = require('../lib/hogan-xpress').bind(ctx)
 
 suite('Render a page', function() {
   test('a basic page with no layout, partials, custom yields, or lambdas', function(done) {
-    render(__dirname + '/fixtures/basic.html', {
+    render(`${ __dirname }/fixtures/basic.html`, {
       settings: {
         title: 'Default title',
         features: 'Default features',
@@ -53,9 +53,9 @@ suite('Render a page', function() {
   })
 
   test('a page with a layout, but no partials, custom yields, or lambdas', function(done) {
-    render(__dirname + '/fixtures/with-layout.html', {
+    render(`${ __dirname }/fixtures/with-layout.html`, {
       settings: {
-        layout: __dirname + '/fixtures/layout.html',
+        layout: `${ __dirname }/fixtures/layout.html`,
         title: 'Default title',
         features: 'Default features',
         deep: arbitraryDeepContent
@@ -84,11 +84,11 @@ suite('Render a page', function() {
   })
 
   test('a page with a layout and partials, but custom yields, or lambdas', function(done) {
-    render(__dirname + '/fixtures/with-layout-partial.html', {
+    render(`${ __dirname }/fixtures/with-layout-partial.html`, {
       settings: {
-        layout: __dirname + '/fixtures/layout.html',
+        layout: `${ __dirname }/fixtures/layout.html`,
         partials: {
-          'list-partial': __dirname + '/fixtures/partials/list-partial.html'
+          'list-partial': `${ __dirname }/fixtures/partials/list-partial.html`
         },
         title: 'Default title',
         features: 'Default features',
@@ -118,11 +118,11 @@ suite('Render a page', function() {
   })
 
   test('a page with a layout and partials and custom yields', function(done) {
-    render(__dirname + '/fixtures/with-layout-partial-yield.html', {
+    render(`${ __dirname }/fixtures/with-layout-partial-yield.html`, {
       settings: {
-        layout: __dirname + '/fixtures/layout-yield.html',
+        layout: `${ __dirname }/fixtures/layout-yield.html`,
         partials: {
-          'list-partial': __dirname + '/fixtures/partials/list-partial.html'
+          'list-partial': `${ __dirname }/fixtures/partials/list-partial.html`
         },
         title: 'Default title',
         features: 'Default features',
@@ -152,11 +152,11 @@ suite('Render a page', function() {
   })
 
   test('a page with a layout, partials, and lambdas', function(done) {
-    render(__dirname + '/fixtures/with-layout-partial-lambda.html', {
+    render(`${ __dirname }/fixtures/with-layout-partial-lambda.html`, {
       settings: {
-        layout: __dirname + '/fixtures/layout.html',
+        layout: `${ __dirname }/fixtures/layout.html`,
         partials: {
-          'list-partial-lambda': __dirname + '/fixtures/partials/list-partial-lambda.html'
+          'list-partial-lambda': `${ __dirname }/fixtures/partials/list-partial-lambda.html`
         },
         lambdas: {
           reverse: function(str) {
@@ -191,11 +191,11 @@ suite('Render a page', function() {
   })
 
   test('a page with a layout, partials, custom yields, and lambdas', function(done) {
-    render(__dirname + '/fixtures/with-layout-partial-yield-lambda.html', {
+    render(`${ __dirname }/fixtures/with-layout-partial-yield-lambda.html`, {
       settings: {
-        layout: __dirname + '/fixtures/layout-yield.html',
+        layout: `${ __dirname }/fixtures/layout-yield.html`,
         partials: {
-          'list-partial-lambda': __dirname + '/fixtures/partials/list-partial-lambda.html'
+          'list-partial-lambda': `${ __dirname }/fixtures/partials/list-partial-lambda.html`
         },
         lambdas: {
           reverse: function(str) {
