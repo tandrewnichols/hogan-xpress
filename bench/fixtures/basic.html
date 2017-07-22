@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <div>
+      <h3>Features</h3>
+      <ul>
+        {{#features}}
+        <li>{{name}}: {{#value}}on{{/value}}{{^value}}off{{/value}}</li>
+        {{/features}}
+      </ul>
+    </div>
+  </body>
+</html>

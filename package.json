@@ -6,7 +6,8 @@
   "scripts": {
     "test": "grunt",
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info",
-    "travis": "grunt ci"
+    "travis": "grunt ci",
+    "baseline": "version=$(node scripts/version.js); echo \"Using reports/baseline-${version}.json\"; baseline -b reports/baseline-${version}.json bench/render.js"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,9 @@
     "eslint-codeframe-formatter": "^1.0.2",
     "expect.js": "~0.3.1",
     "express": "~4.15.3",
+    "fs-extra": "^4.0.0",
     "grunt": "^0.4.5",
+    "grunt-baseline": "^0.1.7",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0",
