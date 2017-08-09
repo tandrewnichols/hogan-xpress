@@ -10,6 +10,7 @@ module.exports = {
   },
   update: {
     options: {
+      baselinePath: `reports/baseline-${ process.version.split('.')[0] }.json`,
       updateBaseline: true
     },
     src: 'bench/render.js'
