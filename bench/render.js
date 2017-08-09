@@ -83,7 +83,7 @@ suite('Render a page', function() {
     }, finish('layout', done))
   })
 
-  test('a page with a layout and partials, but custom yields, or lambdas', function(done) {
+  test('a page with a layout and partials, but no custom yields or lambdas', function(done) {
     render(`${ __dirname }/fixtures/with-layout-partial.html`, {
       settings: {
         layout: `${ __dirname }/fixtures/layout.html`,
