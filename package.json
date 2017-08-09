@@ -1,6 +1,6 @@
 {
   "name": "hogan-xpress",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Mustache template engine for express 3 and 4. Supports partials, layouts, and lambdas",
   "main": "lib/hogan-xpress.js",
   "scripts": {
