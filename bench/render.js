@@ -207,6 +207,7 @@ suite('Render a page', function() {
         deep: arbitraryDeepContent
       },
       title: 'A page with a layout, partials, custom yields, and lambdas',
+      arbitraryContent: arbitraryDeepContent,
       features: [
         {
           name: 'custom yields',
@@ -222,7 +223,8 @@ suite('Render a page', function() {
         },
         {
           name: 'lambdas',
-          value: true
+          value: true,
+          deep: arbitraryDeepContent
         }
       ],
       lambdas: lambdas
