@@ -2,14 +2,14 @@
   "suites": {
     "Render a page": {
       "tests": {
-        "a basic page with no layout, partials, custom yields, or lambdas": 8170.218222122939,
-        "a page with a layout, but no partials, custom yields, or lambdas": 4222.406378176059,
-        "a page with a layout and partials, but no custom yields or lambdas": 2789.001067380664,
-        "a page with a layout and partials and custom yields": 2570.6573900037542,
-        "a page with a layout, partials, and lambdas": 1727.7536330462442,
-        "a page with a layout, partials, custom yields, and lambdas": 1461.0861959835552
+        "a basic page with no layout, partials, custom yields, or lambdas": 7567.551885465645,
+        "a page with a layout, but no partials, custom yields, or lambdas": 4158.018439016298,
+        "a page with a layout and partials, but no custom yields or lambdas": 2844.236522080247,
+        "a page with a layout and partials and custom yields": 2680.6624092086067,
+        "a page with a layout, partials, and lambdas": 2401.290955251007,
+        "a page with a layout, partials, custom yields, and lambdas": 2220.027024619941
       }
     }
   },
-  "timestamp": 1502377409100
+  "timestamp": 1507416476760
 }
